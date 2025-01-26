@@ -1,5 +1,5 @@
-# ignore venv
+## ignore venv
 /venv
-# ignore instruction notes
+## ignore instruction notes
 /instructionNotes.txt
-
+/requirements.txt
