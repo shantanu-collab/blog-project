@@ -1,4 +1,4 @@
 @echo off
 echo Starting Uvicorn server...
-uvicorn main:app --reload
+python -m uvicorn main:app --reload
 pause
