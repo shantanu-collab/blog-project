@@ -5,38 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script src="/static/js/login-page.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <link rel="stylesheet" href="/static/login-page.css">
 </head>
 <body>
-    <div class="container">
-        <a href="#" class="back">&larr; BACK</a>
-        <div class="login-box">
-            <div class="logo">&#x2726;</div>
-            <h2>Log into ByteSpark</h2>
-            <form>
-                <h3>Login Anonymously</h3>
-                <label>Alias Name</label>
-                <input type="text" placeholder="John">
-                <button type="submit" class="annon-login login-btn">Start Writing</button>
-                <br>
-                <br>
-                <h3>Login With Credentials</h3>
-                <label>Email Address</label>
-                <input type="email" placeholder="name@example.com">
-                <label>Password</label>
-                <div class="password-wrapper">
-                    <input type="password" id="password" placeholder="Password">
-                    <span class="toggle-password" onclick="togglePassword()">&#128065;</span>
+    <div class="row">
+        <div class="column">
+            <div class="container">
+                <a href="#" class="back">&larr; BACK</a>
+                <div class="login-box">
+                    <div class="logo">&#x2726;</div>
+                    <h2>Log into ByteSpark</h2>
+                    <form>
+                        <h3>Login Anonymously</h3>
+                        <label>Alias Name</label>
+                        <input type="text" placeholder="John">
+                        <button type="submit" class="annon-login login-btn">Start Writing</button>
+                        <br>
+                        <br>
+                        <h3>Login With Credentials</h3>
+                        <label>Email Address</label>
+                        <input type="email" placeholder="name@example.com">
+                        <label>Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" placeholder="Password">
+                            <span class="toggle-password" onclick="togglePassword()">&#128065;</span>
+                        </div>
+                        <button type="submit" class="login-btn" disabled>Log In</button>
+                    </form>
+                    <div class="separator">OR</div>
+                    <button class="social-btn google">Continue with Google</button>
+                    <button class="social-btn facebook">Continue with Facebook</button>
+                    <a href="#" class="cant-login">Can't log in?</a>
                 </div>
-                <button type="submit" class="login-btn" disabled>Log In</button>
-            </form>
-            <div class="separator">OR</div>
-            <button class="social-btn google">Continue with Google</button>
-            <button class="social-btn facebook">Continue with Facebook</button>
-            <a href="#" class="cant-login">Can't log in?</a>
+                <a href="#" class="create-account">CREATE ACCOUNT</a>
+            </div>
         </div>
-        <a href="#" class="create-account">CREATE ACCOUNT</a>
-    </div>
+        <div class="column ambience">
+            <h1>This is column 2</h1>
+        </div>
+      </div>
+ 
     
 </body>
 </html>
