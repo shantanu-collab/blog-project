@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fff;
+
+}
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+}
+.back {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+}
+.create-account {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+}
+.login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: none;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #000;
+    font-size: 16px;
+    outline: none;
+    background: transparent;
+}
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 16px;
+}
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    cursor: not-allowed;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    color: #888;
+    font-size: 16px;
+}
+.separator {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #888;
+    position: relative;
+}
+.separator::before {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 1px;
+    background: #ccc;
+    left: 0;
+    top: 50%;
+}
+.separator::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 1px;
+    background: #ccc;
+    right: 0;
+    top: 50%;
+}
+.social-btn {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: 1px solid #000;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    background: white;
+}
+.google::before {
+    content: "G";
+    font-size: 18px;
+    margin-right: 10px;
+}
+.apple::before {
+    content: "";
+    font-size: 18px;
+    margin-right: 10px;
+}
+.facebook::before {
+    content: "f";
+    font-size: 18px;
+    margin-right: 10px;
+}
+.cant-login {
+    display: block;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    margin-top: 20px;
+}

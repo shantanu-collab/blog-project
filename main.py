@@ -22,6 +22,14 @@ async def read_root(request: Request):
     return templates.TemplateResponse("home-page.html", 
                                       {"request": {"request": request}})
 
+@app.get("/login-page", response_class=HTMLResponse)
+async def getLoginPage(request:Request):   
+    print("here") 
+    return templates.TemplateResponse("login-page.html", 
+                                      {"request": {"request": request}})
+
+
+
 
 if __name__ == "__main__":
     import uvicorn
