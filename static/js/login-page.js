@@ -65,7 +65,17 @@ window.addEventListener("resize", () => {
     camera.updateProjectionMatrix();
 });
 
+
+
+
 // Initialize Three.js when the page loads
 window.onload = function () {
     initThreeJS();
+    $('#nameID').change(function(){
+        console.log('triggereD')
+        $('.annon-login')
+            .prop('disabled', false)
+            .css('background-color', 'green')
+    })
+    
 };
