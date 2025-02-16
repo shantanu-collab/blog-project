@@ -8,10 +8,6 @@ from starlette.requests import Request
 
 
 
-
-
-
-
 # Initialize FastAPI and Jinja2 Templates
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -24,9 +20,16 @@ async def read_root(request: Request):
 
 @app.get("/login-page", response_class=HTMLResponse)
 async def getLoginPage(request:Request):   
-    print("here") 
     return templates.TemplateResponse("login-page.html", 
                                       {"request": {"request": request}})
+
+
+@app.get("/write-page",response_class=HTMLResponse)
+async def getWritePage(request:Request):
+    print ("Here")
+    return templates.TemplateResponse("write-page.html", 
+                                    {"request": {"request": request}})
+
 
 
 

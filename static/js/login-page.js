@@ -1,3 +1,9 @@
+var userName;
+
+
+
+
+
 function togglePassword() {
     var passwordField = document.getElementById("password");
     if (passwordField.type === "password") {
@@ -57,6 +63,7 @@ function animate() {
 
 // Handle window resizing
 window.addEventListener("resize", () => {
+
     let container = document.querySelector(".ambience");
     let newWidth = container.clientWidth;
     let newHeight = container.clientHeight;
@@ -66,16 +73,29 @@ window.addEventListener("resize", () => {
 });
 
 
+//Invokes when annonymous login is clicked
+$('.annon-login').click(function(){
+    console.log($('#nameID').val())
+    if ($('#nameID').val()==''){
+        alert('Please enter the alias name!')
+    }
+    else {
+        console.log("Here")
+        userName = $('#nameID').val()
+        window.location.href = "/write-page";
+    }
+});
+
+
+
+
+
+
+
 
 
 // Initialize Three.js when the page loads
 window.onload = function () {
     initThreeJS();
-    $('#nameID').change(function(){
-        console.log('triggereD')
-        $('.annon-login')
-            .prop('disabled', false)
-            .css('background-color', 'green')
-    })
     
 };
