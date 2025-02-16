@@ -41,3 +41,81 @@ button {
     color: #bbb;
     margin-top: 10px;
 }
+
+
+/* Basic Button Styles */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    background: green;
+}
+
+/* Primary Button */
+.button-primary {
+    background-color: #007bff;
+    color: #ffffff;
+}
+.button-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Secondary Button */
+.button-secondary {
+    background-color: #6c757d;
+    color: #ffffff;
+}
+.button-secondary:hover {
+    background-color: #545b62;
+}
+
+/* Success Button */
+.button-success {
+    background-color: #28a745;
+    color: #ffffff;
+}
+.button-success:hover {
+    background-color: #1e7e34;
+}
+
+/* Danger Button */
+.button-danger {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+.button-danger:hover {
+    background-color: #bd2130;
+}
+
+/* Outline Buttons */
+.button-outline {
+    background: transparent;
+    border: 2px solid;
+}
+.button-outline.button-primary {
+    border-color: #007bff;
+    color: #007bff;
+}
+.button-outline.button-primary:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+/* Disabled Button */
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Rounded Button */
+.button-rounded {
+    border-radius: 50px;
+}
