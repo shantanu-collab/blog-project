@@ -31,8 +31,9 @@ async def getWritePage(request:Request):
                                     {"request": {"request": request}})
 
 
-
-
+@app.get("/post-content-in-SQL", response_class=HTMLResponse)
+async def saveContentInSQL(request:Request):
+    
 
 if __name__ == "__main__":
     import uvicorn

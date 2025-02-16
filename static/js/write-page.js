@@ -31,6 +31,14 @@ let command = type === "ul" ? "insertUnorderedList" : "insertOrderedList";
 document.execCommand(command, false, null);
 }
 
+$('#postContent').click(function(){
+    $.JSON('/post-content-in-SQL',function(res){
+        
+    })
+})
+
+
+
 // Bind button actions
 $("button").click(function () {
 let action = $(this).attr("onclick");
