@@ -5,10 +5,7 @@ from fastapi.templating import Jinja2Templates
 from pathlib import Path
 from fastapi.staticfiles import StaticFiles
 from starlette.requests import Request
-
-
-
-
+from dataApi import crud
 
 
 # Initialize FastAPI and Jinja2 Templates
@@ -35,9 +32,17 @@ async def getWritePage(request:Request):
 
 
 @app.get("/post-content-in-SQL", response_class=HTMLResponse)
-async def saveContentInSQL(request:Request):
-    return ()
-    
+async def saveContentInSQL(request:Request
+                           ,userName : str
+                           ,loginTime : str
+                           ,logoutTime : str
+                           ):
+    crud.create_user(userName,
+                     loginTime,
+                     logoutTime
+                     )
+
+
 
 if __name__ == "__main__":
     import uvicorn
