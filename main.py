@@ -9,6 +9,8 @@ from starlette.requests import Request
 
 
 
+
+
 # Initialize FastAPI and Jinja2 Templates
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -31,8 +33,10 @@ async def getWritePage(request:Request):
                                     {"request": {"request": request}})
 
 
+
 @app.get("/post-content-in-SQL", response_class=HTMLResponse)
 async def saveContentInSQL(request:Request):
+    return ()
     
 
 if __name__ == "__main__":
