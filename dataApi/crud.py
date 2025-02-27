@@ -11,8 +11,13 @@ async def create_user(db:Session
     query = User(User_Name=userName
                                  ,Login_Time = loginTime
                                 ,Logout_Time = logoutTime)
-    db.add(query)
-    db.commit()
+    
+    try:
+        db.add(query)
+        db.commit()
+        return {"status": 200}
+    except Exception as E:
+        return {"status": 500}
 
 
 

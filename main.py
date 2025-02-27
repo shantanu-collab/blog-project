@@ -9,6 +9,7 @@ from dataApi import crud
 from dataApi.databaseConnection import get_db
 from sqlalchemy.orm import Session
 from pydatnticFiles.pydanticStructures import postContent
+from fastapi.responses import JSONResponse
 
 
 # Initialize FastAPI and Jinja2 Templates
@@ -40,11 +41,12 @@ async def saveContentInSQL(request:Request
                            ,db: Session = Depends(get_db)
                            ):
 
-    await crud.create_user(db
+
+    return(JSONResponse(await crud.create_user(db
                      ,postContent.userName
                      ,postContent.loginTime
                      ,postContent.logoutTime
-                     )
+                     )))
 
 
 if __name__ == "__main__":

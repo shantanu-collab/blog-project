@@ -78,15 +78,35 @@ $('.annon-login').click(function(){
     else {
         console.log("Here")
         userName = $('#nameID').val()
-        window.location.href = "/write-page";
+           // Convert the date string to a Date object
+           const loginTimeDt = new Date();
+           // const logoutTimeDt = new Date();
+       
+           const data = {
+                userName : $('#nameID').val()
+               ,loginTime : loginTimeDt
+               // ,logoutTime : logoutTimeDt
+           };
+       
+           // Send data to FastAPI using $.ajax()
+           $.ajax({
+               url: '/post-content-in-SQL',  // FastAPI endpoint for login
+               type: 'POST',
+               contentType: 'application/json',  // Set content type to JSON
+               data: JSON.stringify(data),  // Send data as JSON
+               success: function(response) {
+                if (response.status == 200)
+                {
+                window.location.href = "/write-page";
+                }
+                else {
+                    alert ("The username that you entered is already taken!")
+                }
+               },  
+       
+           });
     }
 });
-
-
-
-
-
-
 
 
 
@@ -97,25 +117,3 @@ window.onload = function () {
 };
 
 
-$('.annon-login').click(function(){
-    // Convert the date string to a Date object
-        const loginTimeDt = new Date();
-        // const logoutTimeDt = new Date();
-    
-        const data = {
-             userName : $('#nameID').val()
-            ,loginTime : loginTimeDt
-            // ,logoutTime : logoutTimeDt
-        };
-    
-        // Send data to FastAPI using $.ajax()
-        $.ajax({
-            url: '/post-content-in-SQL',  // FastAPI endpoint for login
-            type: 'POST',
-            contentType: 'application/json',  // Set content type to JSON
-            data: JSON.stringify(data),  // Send data as JSON
-            success: function(response) {
-            },  
-    
-        });
-    });
