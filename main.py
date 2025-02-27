@@ -1,11 +1,14 @@
 import pandas as pd
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends, HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
 from fastapi.staticfiles import StaticFiles
 from starlette.requests import Request
 from dataApi import crud
+from dataApi.databaseConnection import get_db
+from sqlalchemy.orm import Session
+from pydatnticFiles.pydanticStructures import postContent
 
 
 # Initialize FastAPI and Jinja2 Templates
@@ -31,17 +34,17 @@ async def getWritePage(request:Request):
 
 
 
-@app.get("/post-content-in-SQL", response_class=HTMLResponse)
+@app.post("/post-content-in-SQL", response_class=HTMLResponse)
 async def saveContentInSQL(request:Request
-                           ,userName : str
-                           ,loginTime : str
-                           ,logoutTime : str
+                           ,postContent:postContent
+                           ,db: Session = Depends(get_db)
                            ):
-    crud.create_user(userName,
-                     loginTime,
-                     logoutTime
-                     )
 
+    await crud.create_user(db
+                     ,postContent.userName
+                     ,postContent.loginTime
+                     ,postContent.logoutTime
+                     )
 
 
 if __name__ == "__main__":

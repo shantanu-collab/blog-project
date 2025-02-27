@@ -31,11 +31,11 @@ let command = type === "ul" ? "insertUnorderedList" : "insertOrderedList";
 document.execCommand(command, false, null);
 }
 
-$('#postContent').click(function(){
-    $.JSON('/post-content-in-SQL',function(res){
-        
-    })
-})
+
+});
+
+
+
 
 
 
@@ -44,4 +44,6 @@ $("button").click(function () {
 let action = $(this).attr("onclick");
 if (action) eval(action); // Executes function based on button click
 });
-});
+
+
+

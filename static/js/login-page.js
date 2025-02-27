@@ -1,9 +1,5 @@
 var userName;
 
-
-
-
-
 function togglePassword() {
     var passwordField = document.getElementById("password");
     if (passwordField.type === "password") {
@@ -99,3 +95,27 @@ window.onload = function () {
     initThreeJS();
     
 };
+
+
+$('.annon-login').click(function(){
+    // Convert the date string to a Date object
+        const loginTimeDt = new Date();
+        // const logoutTimeDt = new Date();
+    
+        const data = {
+             userName : $('#nameID').val()
+            ,loginTime : loginTimeDt
+            // ,logoutTime : logoutTimeDt
+        };
+    
+        // Send data to FastAPI using $.ajax()
+        $.ajax({
+            url: '/post-content-in-SQL',  // FastAPI endpoint for login
+            type: 'POST',
+            contentType: 'application/json',  // Set content type to JSON
+            data: JSON.stringify(data),  // Send data as JSON
+            success: function(response) {
+            },  
+    
+        });
+    });
