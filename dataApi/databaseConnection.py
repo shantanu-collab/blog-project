@@ -27,3 +27,7 @@ def get_db():
         yield db
     finally:
         db.close()
+
+
+def fail_runtime():
+    return 1 / 0  # This will raise ZeroDivisionError at runtime
