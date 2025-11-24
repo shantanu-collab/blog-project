@@ -1,0 +1,8 @@
+aggressiveness: balanced # lenient, balanced, or strict
+rules:
+  - "Check for potential bugs and edge cases"
+  - "Ensure proper error handling"
+  - "Verify code follows project style guide"
+  - "check for pydantic structures where required"
+architecture_guide_path: "docs/ARCHITECTURE.md" # Optional
+
